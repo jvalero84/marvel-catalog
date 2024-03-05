@@ -7,7 +7,6 @@ import { GlobalContext } from "../contexts/GlobalContext";
 import { SearchContext } from "../contexts/SearchContext";
 
 export function CharactersListPage() {
-  //const [charsdata, setCharsdata] = useState([]);
   const { favmode, setFavmode, globalfavs, setGlobalfavs } =
     useContext(GlobalContext);
   const {
@@ -24,8 +23,6 @@ export function CharactersListPage() {
         `https://gateway.marvel.com:443/v1/public/characters?apikey=${process.env.REACT_APP_MARVEL_API_PUB_KEY}&limit=50`
       );
       const data = await res.json();
-      //setCharsdata(data.data.results);
-      //console.log(charsdata);
       setInitialcharacterlist(data.data.results);
       setCharacterlist(data.data.results);
       setHitsCounter(data.data.results.length);
@@ -40,10 +37,10 @@ export function CharactersListPage() {
 
   return (
     <Div>
-      <SearchBox />
       {favmode ? (
         <div>
-          <span style={{ paddingLeft: "20px" }}>FAVORITES</span>
+          <FavsTitle>FAVORITES</FavsTitle>
+          <SearchBox />
           <Div2>
             {characterlist.map(
               (item: TCharCard) =>
@@ -62,26 +59,34 @@ export function CharactersListPage() {
           </Div2>
         </div>
       ) : (
-        <Div2>
-          {characterlist.map((char: TCharCard) => (
-            <CharacterCard
-              key={char.id}
-              id={char.id}
-              name={char.name}
-              thumbnail={{
-                path: char.thumbnail.path,
-                extension: char.thumbnail.extension,
-              }}
-            />
-          ))}
-        </Div2>
+        <div>
+          <SearchBox />
+          <Div2>
+            {characterlist.map((char: TCharCard) => (
+              <CharacterCard
+                key={char.id}
+                id={char.id}
+                name={char.name}
+                thumbnail={{
+                  path: char.thumbnail.path,
+                  extension: char.thumbnail.extension,
+                }}
+              />
+            ))}
+          </Div2>
+        </div>
       )}
     </Div>
   );
 }
 
+const FavsTitle = styled.p`
+  font: 700 32px Roboto Condensed, sans-serif;
+  padding-left: 20px;
+`;
+
 const Div = styled.div`
-  width: 100%;
+  width: 99%;
   margin: auto;
   padding-top: 25px;
 `;

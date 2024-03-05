@@ -3,7 +3,9 @@ export type TCharBasic = {
   name: string;
 };
 
-export type TCharCard = TCharBasic & {
+export type TCharCard = TCharBasic & TThumbnail;
+
+export type TThumbnail = {
   thumbnail: {
     path: string;
     extension: string;
@@ -12,7 +14,14 @@ export type TCharCard = TCharBasic & {
 
 export type TCharDetail = TCharCard & {
   description: string;
-  // comics: [{
+};
 
-  // }]
+export type TComicInfo = TThumbnail & {
+  id: number;
+  title: string;
+  year: number;
+};
+
+export type TCharIdParam = {
+  id: string;
 };

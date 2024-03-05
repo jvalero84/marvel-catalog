@@ -19,6 +19,7 @@ export function Header() {
   };
 
   const handleFavsClick = () => {
+    if (!globalfavs.length) return;
     setFavmode(true);
     if (location.pathname !== "/") {
       navigate("/");

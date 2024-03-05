@@ -18,7 +18,7 @@ export function CharacterCard({ name, id, thumbnail }: TCharCard) {
     id: number
   ) => {
     event.stopPropagation();
-    console.log(id);
+    //console.log(id);
     var updatedFavs: number[] = [...globalfavs];
     globalfavs.includes(id)
       ? updatedFavs.splice(globalfavs.indexOf(id), 1)
@@ -29,10 +29,8 @@ export function CharacterCard({ name, id, thumbnail }: TCharCard) {
   return (
     <Div id={id.toString()} onClick={() => navigate(`/character/${id}`)}>
       <Div2 $imgurl={`${thumbnail.path}.${thumbnail.extension}`} />
-      {/* <Img3 loading="lazy" src={`${thumbnail.path}.${thumbnail.extension}`} /> */}
       <DivRed />
       <Div3>
-        {/* <DivRed> */}
         <Div4>
           <Div5>{name}</Div5>
           <Img
@@ -47,7 +45,6 @@ export function CharacterCard({ name, id, thumbnail }: TCharCard) {
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/56d4e88fe261d54bb2ed803c02fe6aefcc5c3c2c35b5ac95868644a2efe0244b?"
         />
-        {/* </DivRed> */}
       </Div3>
     </Div>
   );
@@ -65,22 +62,17 @@ const Div = styled.div<IDivElementProps>`
   background-color: #000;
   min-height: 246px;
   display: flex;
-  //max-width: 173px;
   width: 172.5px;
   flex-direction: column;
-  //flex-wrap: wrap-reverse;
   font-size: 14px;
   color: #fff;
   font-weight: 400;
-  //white-space: pre;
   text-transform: uppercase;
   cursor: pointer;
   &:hover {
     background-color: var(--marvel-red);
     ${Img} {
       fill: white;
-
-      //background-color: white;
     }
   }
 `;

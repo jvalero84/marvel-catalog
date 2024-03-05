@@ -15,7 +15,6 @@ export function SearchBox() {
   const [termEntered, setTermEntered] = useState("");
 
   const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("Handling...");
     const searchTerm = event.currentTarget.value;
     setTermEntered(searchTerm);
     const newFilter = initialcharacterlist.filter((char) => {
@@ -49,7 +48,6 @@ export function SearchBox() {
           onChange={(e) => handleFilter(e)}
           disabled={favmode}
         />
-        {/* <Div4>Search a character...</Div4> */}
       </Div2>
       <Div5>{`${favmode ? globalfavs.length : hitsCounter} Results`}</Div5>
     </Div>
@@ -57,8 +55,8 @@ export function SearchBox() {
 }
 
 const Input = styled.input`
-  max-width: 98%;
-  width: 98%;
+  max-width: 99%;
+  width: 99%;
   padding-bottom: 5px;
   padding-left: 0px;
   border: none;
@@ -105,6 +103,7 @@ const Div4 = styled.div`
   flex-grow: 1;
   flex-basis: auto;
   font: 16px Roboto Condensed;
+  font-weight: 400;
   @media (max-width: 991px) {
     max-width: 100%;
   }
@@ -115,6 +114,7 @@ const Div5 = styled.div`
   text-transform: uppercase;
   margin-top: 12px;
   font: 12px Roboto Condensed;
+  font-weight: 400;
   @media (max-width: 991px) {
     max-width: 100%;
   }
