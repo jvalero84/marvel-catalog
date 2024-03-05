@@ -1,6 +1,41 @@
-# Getting Started with Create React App
+# Marvel catalog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project aims to work as a catalog for Marvel characters. 
+
+On the landing view, it shows the user a list of Marvel characters with a search box where the results can be filtered by character name.
+From this view, the user can mark specific characters as their favorites and access the detail view of each character by clicking on the character card. 
+
+The character detail view shows more detailed information of the selected character and a list of the character comics. From this view, the user can also mark a character as favorite.
+
+The top right corner of the header displays an indicator of the number of favorite characters selected by the user, and by clicking on the heart icon, a summary of the favorite characters of the user is shown.
+
+
+The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). using typescript (--template typescript)
+
+It has been developed using typescript and styled components
+
+The main modules used to develop this project are:
+
+    - react: 18.2.0
+    - react-router-dom: 6.22.2
+    - typescript: 4.9.5
+    - styled-components: 6.1.8
+ 
+ Before starting up the application, make sure a file .env exists at the root level containing an entry REACT_APP_MARVEL_API_PUB_KEY= followed by the Marvel API Key.
+
+ The data source for this project comes from the Marvel API, and to make use of it, an API KEY is needed and can be obteined on the Marvel website [More info](https://developer.marvel.com/account)  .   
+ 
+ The project code is structured in a few folders:
+
+    Under src/ the global files and entry points of the react app are placed and the rest of the code is on these folders:
+
+    - components: Where the React components used by the pages are placed.
+    - contexts: Where the context and context providers are created and exported.
+    - pages: Where the two views of the application are located.
+    - types: types and interfaces created and used throughout the application.
+
+    The static assets are located on the public folder.
+
 
 ## Available Scripts
 
