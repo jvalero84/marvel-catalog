@@ -36,10 +36,7 @@ export function CharacterCard({ name, id, thumbnail }: TCharCard) {
                         onClick={(e) => handleFavClick(e, id)}
                     />
                 </Div4>
-                <Img2
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/56d4e88fe261d54bb2ed803c02fe6aefcc5c3c2c35b5ac95868644a2efe0244b?"
-                />
+                <Img2 loading="lazy" src="/img/card-corner.svg" />
             </Div3>
         </Div>
     )
@@ -97,7 +94,6 @@ const DivRed = styled.div`
 const Div4 = styled.div`
     display: flex;
     justify-content: space-between;
-    gap: 20px;
     padding: 0 1px;
 `
 
@@ -109,8 +105,8 @@ const Div5 = styled.div`
 `
 
 const Img2 = styled.img`
-    aspect-ratio: 1.09;
+    /* aspect-ratio: 1.09; */
     width: 13px;
     fill: #fff;
-    align-self: end;
+    align-self: flex-end;
 `
